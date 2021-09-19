@@ -3,31 +3,38 @@
 <class>
  <name>Kyle</name>
  <build>Infinite</build>
- <classname>Moze</classname>
+ <classname>Zane</classname>
  <level>50</level>
  <barank>66</barank>
- <legends>2</legends>
- <gun1>1</gun1>
- <gun2>2</gun2>
- <gun3>3</gun3>
- <gun4>4</gun4>
- <grenade>cm</grenade>
- <artifact>a</artifact>
- <classmod>gr</classmod>
- <shield>sh</shield>
- <skillsGreen>g</skillsGreen>
- <skillsBlue>b</skillsBlue>
- <skillsRed>r</skillsRed>
- <skillsPurple>p</skillsPurple>
+ <legends>3</legends>
+ <gun1>Legendary Assault Rifle</gun1>
+ <gun2>Rocket Launcher</gun2>
+ <gun3>Sniper</gun3>
+ <gun4>SMG</gun4>
+ <grenade>Extra ammo</grenade>
+ <artifact>Fire Rate up!</artifact>
+ <classmod>Legendary: Epicenter</classmod>
+ <shield>Re-Charger!</shield>
+ <skillsGreen>Most of my skill points
+ - increased damage whille 
+   moving
+ - increased shields,
+	*reduces health 25%
+ - increased movement 
+    speed</skillsGreen>
+ <skillsBlue>Skill points into:
+ - 3 points to increased fuel
+ - 3 points to armor</skillsBlue>
+ <skillsRed>No skill points</skillsRed>
+ <skillsPurple>No skill points</skillsPurple>
  <g1>true</g1>
  <g2>false</g2>
  <g3>false</g3>
  <g4>false</g4>
  <a>false</a>
  <cm>false</cm>
- <gr>false</gr>
+ <gr>true</gr>
  <sh>true</sh>
- <lg>true</lg>
  <lg>true</lg>
 </class>
 </sheet>
