@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="924.0" prefWidth="780.0" style="-fx-background-color: #87b3fa; -fx-border-width: 6; -fx-border-color: black;" stylesheets="@CSS/stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="character.sheet.xml.FXMLDocumentController">
+    <children>
+      <Label alignment="CENTER" layoutX="200.0" layoutY="22.0" prefHeight="46.0" prefWidth="406.0" style="-fx-background-color: #faeb87; -fx-border-color: black; -fx-padding: 3; -fx-border-radius: 4; -fx-background-radius: 5;" text="Borderlands-Style Character Sheet">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="80.0" prefHeight="199.0" prefWidth="699.0" style="-fx-background-color: #c27a7a; -fx-border-color: black; -fx-border-width: 3;" />
+      <TextField fx:id="name" layoutX="205.0" layoutY="107.0" promptText="Character Name" />
+      <TextField fx:id="buildname" layoutX="205.0" layoutY="140.0" promptText="Build Name" />
+      <ComboBox fx:id="classname" layoutX="205.0" layoutY="173.0" onAction="#handleImageAction" prefWidth="150.0" promptText="Class" />
+      <Spinner fx:id="level" editable="true" layoutX="205.0" layoutY="206.0" />
+      <Spinner fx:id="baRank" editable="true" layoutX="205.0" layoutY="239.0" />
+      <Label layoutX="105.0" layoutY="107.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Name: " />
+      <Label layoutX="105.0" layoutY="140.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Build Name:" />
+      <Label layoutX="105.0" layoutY="173.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Class:" />
+      <Label layoutX="105.0" layoutY="206.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Level:" />
+      <Label layoutX="105.0" layoutY="239.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="BA Rank" />
+      <ImageView fx:id="classImg" fitHeight="116.0" fitWidth="307.0" layoutX="406.0" layoutY="128.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG/BL3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="44.0" layoutY="278.0" prefHeight="262.0" prefWidth="699.0" style="-fx-background-color: #faeb87; -fx-border-color: black; -fx-border-width: 3;" />
+      <Label alignment="CENTER" layoutX="354.0" layoutY="291.0" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #fad487; -fx-border-color: black; -fx-padding: 3; -fx-border-radius: 4; -fx-background-radius: 5;" text="Inventory" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label fx:id="gun1Label" layoutX="150.0" layoutY="337.0" onMouseClicked="#handleLegendAction" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Weapon 1:" />
+      <Label fx:id="gun3Label" layoutX="150.0" layoutY="399.0" onMouseClicked="#handleLegendAction" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Weapon 3:" />
+      <Label fx:id="gun2Label" layoutX="150.0" layoutY="368.0" onMouseClicked="#handleLegendAction" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Weapon 2:" />
+      <Label fx:id="gun4Label" layoutX="150.0" layoutY="431.0" onMouseClicked="#handleLegendAction" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Weapon 4:" />
+      <TextField fx:id="gun1" layoutX="227.0" layoutY="338.0" />
+      <TextField fx:id="gun2" layoutX="227.0" layoutY="368.0" />
+      <TextField fx:id="gun3" layoutX="228.0" layoutY="399.0" />
+      <TextField fx:id="gun4" layoutX="228.0" layoutY="431.0" />
+      <Label fx:id="artifactLabel" layoutX="421.0" layoutY="335.0" onMouseClicked="#handleLegendAction" prefHeight="27.0" prefWidth="67.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Artifact:" />
+      <Label fx:id="classmodLabel" layoutX="421.0" layoutY="366.0" onMouseClicked="#handleLegendAction" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Class Mod:" />
+      <Label fx:id="grenadeLabel" layoutX="421.0" layoutY="397.0" onMouseClicked="#handleLegendAction" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Grenade:" />
+      <Label fx:id="shieldLabel" layoutX="421.0" layoutY="429.0" onMouseClicked="#handleLegendAction" prefHeight="27.0" prefWidth="67.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Shield:" />
+      <Label layoutX="268.0" layoutY="468.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Legendary Count:" />
+      <Label fx:id="legendLabel" layoutX="268.0" layoutY="502.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Click on an item label to make it legendary-tier!" />
+      <TextField fx:id="artifact" layoutX="498.0" layoutY="336.0" />
+      <TextField fx:id="grenade" layoutX="498.0" layoutY="366.0" />
+      <TextField fx:id="classmod" layoutX="499.0" layoutY="397.0" />
+      <TextField fx:id="shield" layoutX="499.0" layoutY="429.0" />
+      <Spinner fx:id="legend" layoutX="400.0" layoutY="469.0" prefHeight="25.0" prefWidth="126.0" />
+      <Label layoutX="44.0" layoutY="537.0" prefHeight="289.0" prefWidth="699.0" style="-fx-background-color: #a38cab; -fx-border-color: black; -fx-border-width: 3;" />
+      <Label alignment="CENTER" layoutX="311.0" layoutY="550.0" prefHeight="35.0" prefWidth="178.0" style="-fx-background-color: #dd87fa; -fx-border-color: black; -fx-padding: 3; -fx-border-radius: 4; -fx-background-radius: 5;" text="Skill Tree Information">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="616.0" layoutY="594.0" style="-fx-background-color: #b05cdd; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Purple Tree" />
+      <Label layoutX="453.0" layoutY="594.0" style="-fx-background-color: #d36b3e; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Red Tree" />
+      <Label layoutX="281.0" layoutY="594.0" style="-fx-background-color: #64c0e8; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Blue Tree" />
+      <Label layoutX="102.0" layoutY="594.0" style="-fx-background-color: #6be85a; -fx-border-color: black; -fx-border-width: 1; -fx-padding: 4; -fx-border-radius: 4; -fx-background-radius: 5;" text="Green Tree" />
+      <TextArea fx:id="skillsGreen" layoutX="55.0" layoutY="627.0" prefHeight="182.0" prefWidth="163.0" promptText="Please type Green skill tree information here" />
+      <TextArea fx:id="skillsBlue" layoutX="228.0" layoutY="627.0" prefHeight="182.0" prefWidth="163.0" promptText="Please type Blue skill tree information here" />
+      <TextArea fx:id="skillsRed" layoutX="400.0" layoutY="627.0" prefHeight="182.0" prefWidth="163.0" promptText="Please type Red skill tree information here" />
+      <TextArea fx:id="skillsPurple" layoutX="570.0" layoutY="627.0" prefHeight="182.0" prefWidth="163.0" promptText="Please type Purple skill tree information here" />        
+        <Button fx:id="clearbtn" layoutX="371.0" layoutY="864.0" onAction="#handleClearAction" style="-fx-background-color: purple;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+        </Button>
+      <Button fx:id="savebtn" layoutX="306.0" layoutY="864.0" mnemonicParsing="false" onAction="#handleSaveAction" style="-fx-background-color: purple;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="loadbtn" layoutX="439.0" layoutY="864.0" mnemonicParsing="false" onAction="#handleLoadAction" style="-fx-background-color: purple;" text="Load" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="progressbar" layoutX="299.0" layoutY="834.0" prefWidth="200.0" progress="0.0" />
+      <Button fx:id="gun1Btn" layoutX="150.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="gun2Btn" layoutX="150.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="gun3Btn" layoutX="150.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="artifactBtn" layoutX="422.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="gun4Btn" layoutX="150.0" layoutY="431.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="classmodBtn" layoutX="422.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="grenadeBtn" layoutX="422.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="shieldBtn" layoutX="422.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
+      <Button fx:id="legendBtn" layoutX="268.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="262.0" text="Button" />
+    </children>
+    
+</AnchorPane>

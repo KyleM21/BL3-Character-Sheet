@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sheet>
+<class>
+ <name>Kyle</name>
+ <build>Infinite</build>
+ <classname>Moze</classname>
+ <level>50</level>
+ <barank>66</barank>
+ <legends>2</legends>
+ <gun1>1</gun1>
+ <gun2>2</gun2>
+ <gun3>3</gun3>
+ <gun4>4</gun4>
+ <grenade>cm</grenade>
+ <artifact>a</artifact>
+ <classmod>gr</classmod>
+ <shield>sh</shield>
+ <skillsGreen>g</skillsGreen>
+ <skillsBlue>b</skillsBlue>
+ <skillsRed>r</skillsRed>
+ <skillsPurple>p</skillsPurple>
+ <g1>true</g1>
+ <g2>false</g2>
+ <g3>false</g3>
+ <g4>false</g4>
+ <a>false</a>
+ <cm>false</cm>
+ <gr>false</gr>
+ <sh>true</sh>
+ <lg>true</lg>
+ <lg>true</lg>
+</class>
+</sheet>

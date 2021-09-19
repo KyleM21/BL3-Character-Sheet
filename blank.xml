@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sheet>
+<class>
+ <name></name>
+ <build></build>
+ <classname>null</classname>
+ <level>0</level>
+ <barank>0</barank>
+ <legends>0</legends>
+ <gun1></gun1>
+ <gun2></gun2>
+ <gun3></gun3>
+ <gun4></gun4>
+ <grenade></grenade>
+ <artifact></artifact>
+ <classmod></classmod>
+ <shield></shield>
+ <skillsGreen></skillsGreen>
+ <skillsBlue></skillsBlue>
+ <skillsRed></skillsRed>
+ <skillsPurple></skillsPurple>
+ <g1>false</g1>
+ <g2>false</g2>
+ <g3>false</g3>
+ <g4>false</g4>
+ <a>false</a>
+ <cm>false</cm>
+ <gr>false</gr>
+ <sh>false</sh>
+ <lg>false</lg>
+</class>
+</sheet>
