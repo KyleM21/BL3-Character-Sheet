@@ -152,7 +152,7 @@ public class FXMLDocumentController implements Initializable {
         level.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 72));
         level.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) {
-              level.increment(0); // incrementing the spinner by 0 will force it to update if the user does not hit enter
+                level.increment(0); // incrementing the spinner by 0 will force it to update if the user does not hit enter
             }
         });
         baRank.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10000));
