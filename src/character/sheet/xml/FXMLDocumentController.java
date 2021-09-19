@@ -38,7 +38,8 @@ import org.xml.sax.SAXException;
  * kyle_marcoux@student.uml.edu
  */
 public class FXMLDocumentController implements Initializable {
-    
+
+    // Initializing all of my FXML variables
     @FXML
     private TextField name;
     @FXML
@@ -49,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
     private Spinner level;
     @FXML
     private Spinner baRank;
-    
+
     @FXML
     private TextField gun1;
     @FXML
@@ -66,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField gun4;
     @FXML
     private Label gun4Label;
-    
+
     @FXML
     private TextField grenade;
     @FXML
@@ -87,7 +88,7 @@ public class FXMLDocumentController implements Initializable {
     private Spinner legend;
     @FXML
     private Label legendLabel;
-    
+
     @FXML
     private TextArea skillsGreen;
     @FXML
@@ -96,46 +97,57 @@ public class FXMLDocumentController implements Initializable {
     private TextArea skillsRed;
     @FXML
     private TextArea skillsPurple;
-    
+
     @FXML
     private ProgressBar progressBar;
-    
+
     @FXML
     private ImageView classImg;
-    
+
+    // Creates filechooser for later use
     FileChooser fileChooser = new FileChooser();
+
+    // Declares boolean variables for label color changing
     boolean g1,g2,g3,g4,a,cm,gr,sh,lg;
-    
+
+    // Declares styles for easier to read color changing code in the handleLegendAction function
     String defCSS = "-fx-background-color: white;"
                     + " -fx-border-color: black;"
                     + " -fx-border-width: 1;"
                     + " -fx-padding: 4;"
                     + " -fx-border-radius: 4;"
                     + " -fx-background-radius: 5;";
-    
+
     String legendCSS = "-fx-background-color: #fad487;"
                     + " -fx-border-color: black;"
                     + " -fx-border-width: 1;"
                     + " -fx-padding: 4;"
                     + " -fx-border-radius: 4;"
                     + " -fx-background-radius: 5;";
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
+        // Initalizes booleans as false
         g1 = g2 = g3 = g4 = a = cm = gr = sh = lg = false;
+
+        // Initialize spinners and combobox
         initSpinner();
         initCombo();
-        
+
+        // Attempts to get the filepath of the program to use in saving/loading data
         try {
             String path = new File(".").getCanonicalPath();
             fileChooser.setInitialDirectory(new File(path));
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    }    
-    
+
+    }
+
+    // Initializes spinners to have a valueFactory, and sets their min/max value
+    // It also adds a listener to the spinners to ensure the values are commited
+    // to the field even if the user does not hit enter.
     private void initSpinner() {
         level.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 72));
         level.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -150,8 +162,10 @@ public class FXMLDocumentController implements Initializable {
             }
         });
         legend.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 8));
+        legend.getStyleClass().clear();
     }
-    
+
+    // Initialies the combobox's options
     private void initCombo() {
         classname.getItems().addAll(
             "Amara",
@@ -160,49 +174,51 @@ public class FXMLDocumentController implements Initializable {
             "Zane"
         );
     }
-    
+
+    // This function handles the act of saving the program, it creates a file chooser window and presents the user with a save dialog
     @FXML
     private void handleSaveAction(ActionEvent event){
-        
+
         Window stage = name.getScene().getWindow();
         fileChooser.setTitle("Save Dialog");
         fileChooser.setInitialFileName("BL3Sheet");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("XML File", "*.xml"));
         File file = fileChooser.showSaveDialog(stage);
-        
+
+        // If the user does which to save a file, the form will be compiled by compileText() and sent to saveFile() to be written
         if(file != null){
             saveFile(compileText(), file);
         }
-        
+
     }
-    
+
+    // Compiles the form into an ArrayList<String> to be sent to saveFile()
     private ArrayList compileText(){
-        
+
         ArrayList<String> x = new ArrayList<>();
-        
-        //I seperated these by field on the form itself.
+
+        // I tried to seperate these statements by how the form is divided!
         x.add(" <name>" + name.getText() + "</name>");
         x.add(" <build>" + buildname.getText() + "</build>");
         x.add(" <classname>" + (String) classname.getValue() + "</classname>");
         x.add(" <level>" + String.valueOf(level.getValue()) + "</level>");
         x.add(" <barank>" + String.valueOf(baRank.getValue()) + "</barank>");
-        x.add(" <legends>" + String.valueOf(legend.getValue()) + "</legends>");
-        
+
         x.add(" <gun1>" + gun1.getText() + "</gun1>");
         x.add(" <gun2>" + gun2.getText() + "</gun2>");
         x.add(" <gun3>" + gun3.getText() + "</gun3>");
         x.add(" <gun4>" + gun4.getText() + "</gun4>");
-        
         x.add(" <grenade>" + grenade.getText() + "</grenade>");
         x.add(" <artifact>" + artifact.getText() + "</artifact>");
         x.add(" <classmod>" + classmod.getText() + "</classmod>");
         x.add(" <shield>" + shield.getText() + "</shield>");
-        
+        x.add(" <legends>" + String.valueOf(legend.getValue()) + "</legends>");
+
         x.add(" <skillsGreen>" + skillsGreen.getText() + "</skillsGreen>");
         x.add(" <skillsBlue>" + skillsBlue.getText() + "</skillsBlue>");
         x.add(" <skillsRed>" + skillsRed.getText() + "</skillsRed>");
         x.add(" <skillsPurple>" + skillsPurple.getText() + "</skillsPurple>");
-        
+
         x.add(" <g1>" + g1 + "</g1>");
         x.add(" <g2>" + g2 + "</g2>");
         x.add(" <g3>" + g3 + "</g3>");
@@ -212,27 +228,28 @@ public class FXMLDocumentController implements Initializable {
         x.add(" <gr>" + gr + "</gr>");
         x.add(" <sh>" + sh + "</sh>");
         x.add(" <lg>" + lg + "</lg>");
-        
-        
+
         return x;
     }
-    
+
+    // This function takes the compiled array and writes it on an xml file
     private void saveFile(ArrayList content, File file){
         try {
             PrintWriter writer;
             writer = new PrintWriter(file);
-            
             writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "\n" + "<sheet>" + "\n" + "<class>");
-            for(int i=0; i<27; i++){
+            for(int i=0; i<content.size(); i++){
                 writer.println(content.get(i));
             }
             writer.println("</class>" + "\n" + "</sheet>");
             writer.close();
-        } catch (IOException ex) {
-            
+        }
+        catch (IOException ex) {
+
         }
     }
-    
+
+    // This function handles the act of loading the file, bringing up the dialogue and sending the file to load to loadFile()
     @FXML
     private void handleLoadAction(ActionEvent event) throws IOException, FileNotFoundException, ParserConfigurationException, SAXException{
         Window stage = name.getScene().getWindow();
@@ -240,17 +257,16 @@ public class FXMLDocumentController implements Initializable {
         fileChooser.setInitialFileName("BL3Sheet");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("XML File", "*.xml"));
         File file = fileChooser.showOpenDialog(stage);
-        
+
         if(file != null){
             loadFile(file);
         }
     }
-    
+
+    // This uses DocumentBuilder to parse the .xml file and fills the form out with its elements
     private void loadFile(File file) throws FileNotFoundException, IOException, ParserConfigurationException, SAXException{
-        
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document dom = (Document) builder.parse(file);
-        
         Element root = dom.getDocumentElement();
 
         name.setText(root.getElementsByTagName("name").item(0).getTextContent());
@@ -260,22 +276,23 @@ public class FXMLDocumentController implements Initializable {
         level.getValueFactory().setValue(parseInt(root.getElementsByTagName("level").item(0).getTextContent()));
         baRank.getValueFactory().setValue(parseInt(root.getElementsByTagName("barank").item(0).getTextContent()));
         legend.getValueFactory().setValue(parseInt(root.getElementsByTagName("legends").item(0).getTextContent()));
-        
+
         gun1.setText(root.getElementsByTagName("gun1").item(0).getTextContent());
         gun2.setText(root.getElementsByTagName("gun2").item(0).getTextContent());
         gun3.setText(root.getElementsByTagName("gun3").item(0).getTextContent());
         gun4.setText(root.getElementsByTagName("gun4").item(0).getTextContent());
-        
+
         grenade.setText(root.getElementsByTagName("grenade").item(0).getTextContent());
         artifact.setText(root.getElementsByTagName("artifact").item(0).getTextContent());
         classmod.setText(root.getElementsByTagName("classmod").item(0).getTextContent());
         shield.setText(root.getElementsByTagName("shield").item(0).getTextContent());
-        
+
         skillsGreen.setText(root.getElementsByTagName("skillsGreen").item(0).getTextContent());
         skillsBlue.setText(root.getElementsByTagName("skillsBlue").item(0).getTextContent());
         skillsRed.setText(root.getElementsByTagName("skillsRed").item(0).getTextContent());
         skillsPurple.setText(root.getElementsByTagName("skillsPurple").item(0).getTextContent());
-        
+
+        // This just checks if any of the inventory items are legendary, and marks them accordingly
         g1 = parseBoolean(root.getElementsByTagName("g1").item(0).getTextContent());
         if(g1){gun1Label.setStyle(legendCSS);}
         else{gun1Label.setStyle(defCSS);}
@@ -304,12 +321,14 @@ public class FXMLDocumentController implements Initializable {
         if(lg){legendLabel.setStyle(legendCSS);}
         else{legendLabel.setStyle(defCSS);}
     }
-    
+
+    // This is just a listener to change the image to the selected class
     @FXML
     private void handleImageAction(ActionEvent event){
         classImg.setImage(new Image("file:src/character/sheet/xml/IMG/" + (String) classname.getValue() + ".png"));
     }
-    
+
+    // handleClearAction resets everything to default: text, images, legendary status and handles the CSS styling to make it default again
     @FXML
     private void handleClearAction(ActionEvent event){
         name.setText("");
@@ -318,23 +337,23 @@ public class FXMLDocumentController implements Initializable {
         level.getValueFactory().setValue(0);
         baRank.getValueFactory().setValue(0);
         classImg.setImage(new Image("file:src/character/sheet/xml/IMG/BL3.png"));
-        
+
         gun1.setText("");
         gun2.setText("");
         gun3.setText("");
         gun4.setText("");
-        
+
         grenade.setText("");
         artifact.setText("");
         classmod.setText("");
         shield.setText("");
         legend.getValueFactory().setValue(0);
-        
+
         skillsGreen.setText("");
         skillsBlue.setText("");
         skillsRed.setText("");
         skillsPurple.setText("");
-       
+
         g1 = g2 = g3 = g4 = a = cm = gr = sh = false;
         gun1Label.setStyle(defCSS);
         gun2Label.setStyle(defCSS);
@@ -345,12 +364,14 @@ public class FXMLDocumentController implements Initializable {
         grenadeLabel.setStyle(defCSS);
         shieldLabel.setStyle(defCSS);
     }
-    
+
+    // I'll admit this is very lengthy, but what this does is very simple!
+    // This just checks to see which label was pressed for the legendary toggle using a switch,
+    // then increments/decrements the legendary total and styles it accordingly
     @FXML
     private void handleLegendAction(ActionEvent event){
-        
         Button btn = (Button) event.getSource();
-        
+
         switch(btn.getId()){
             case "gun1Btn":
                 if(g1){
@@ -460,15 +481,4 @@ public class FXMLDocumentController implements Initializable {
                 break;
         }
     }
-    
 }
-
-
-//        g1 = g2 = g3 = g4 = a = cm = gr = sh = false;
-//        String[] list = {"g1", "g2", "g3", "g4", "a", "cm", "gr", "sh"};
-//        for(int i=0; i<7; i++){
-//            //list[i];
-//            if(parseBoolean(root.getElementsByTagName(list[i]).item(0).getTextContent())){
-//                list[i].setStyle(defCSS);
-//            }
-//        }
