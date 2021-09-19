@@ -23,7 +23,7 @@ public class CharacterSheetXML extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
-        
+        stage.setTitle("Borderlands Character Sheet");
         stage.setScene(scene);
         stage.show();
     }
