@@ -1,8 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// File name: FXMLDocumentController.java
+// Written by: Kyle Marcoux
+// Description:  This is a character sheet for planning characters in a game called Borderlands 3!
+// Revision History:
+// Date:         		By:     Action:
+// ---------------------------------------------------
+/*      09/15/21                KM      Created the program
+        09/16/21                KM      Planned layout, created the form in Scene Builder
+        09/17/21 - 09/19/21     KM      Added functionality and bug tested
+*/
+
 package character.sheet.xml;
 
 import java.io.File;
@@ -31,12 +37,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
-/**
- *
- * @author Kyle Marcoux
- * Senior at UML
- * kyle_marcoux@student.uml.edu
- */
 public class FXMLDocumentController implements Initializable {
 
     // Initializing all of my FXML variables
