@@ -6,7 +6,6 @@
  <classname>null</classname>
  <level>0</level>
  <barank>0</barank>
- <legends>0</legends>
  <gun1></gun1>
  <gun2></gun2>
  <gun3></gun3>
@@ -15,6 +14,7 @@
  <artifact></artifact>
  <classmod></classmod>
  <shield></shield>
+ <legends>0</legends>
  <skillsGreen></skillsGreen>
  <skillsBlue></skillsBlue>
  <skillsRed></skillsRed>

@@ -98,8 +98,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea skillsPurple;
 
-    @FXML
-    private ProgressBar progressBar;
+    //@FXML
+    //private ProgressBar progressBar;
 
     @FXML
     private ImageView classImg;

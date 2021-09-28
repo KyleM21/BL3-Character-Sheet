@@ -93,7 +93,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <ProgressBar fx:id="progressbar" layoutX="299.0" layoutY="834.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="progressbar" layoutX="299.0" layoutY="834.0" opacity="0.0" prefWidth="200.0" progress="0.0" />
       <Button fx:id="gun1Btn" layoutX="150.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
       <Button fx:id="gun2Btn" layoutX="150.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
       <Button fx:id="gun3Btn" layoutX="150.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleLegendAction" opacity="0.0" prefHeight="27.0" prefWidth="67.0" text="Button" />
