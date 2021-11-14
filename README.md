@@ -1,4 +1,11 @@
 # BL3-Character-Sheet
+
+## Run
+
+Download and run "Character Sheet XML.jar", it is found in the main directory
+
+## Description: 
+
 Hello, welcome to my character sheet program!
 
 To start off, all of the code is in the directory "src\character\sheet\xml\". 
